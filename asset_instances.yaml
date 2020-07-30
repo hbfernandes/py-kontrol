@@ -1,0 +1,32 @@
+apiVersion: hv.com/v1
+kind: AssetTemplate
+metadata:
+  name: vehicle
+spec:
+  className: Vehicle
+  src: |
+    class Vehicle:
+      def __init__(self, arg_1, arg_2, arg_3)
+        self.prop_1 = arg_1
+        self.prop_2 = arg_2
+        self.prop_3 = arg_3
+
+      def method_1(self):
+        return 1
+      
+      def method_2(self):
+        return 2
+
+--- 
+apiVersion: hv.com/v1
+kind: AssetInstance
+metadata:
+  name: man-tgx
+spec:
+  template: vehicle
+  args:
+    - 1
+    - 2
+    - 3
+  kwargs:
+    - key: val

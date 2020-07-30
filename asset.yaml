@@ -1,6 +1,0 @@
-apiVersion: hv.com/v1
-kind: Asset
-metadata:
-  name: my-asset
-spec:
-  assetSpec: "something 2"

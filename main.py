@@ -1,19 +1,12 @@
-from kubernetes import client, config
+from kubernetes import config
 import sys
 import traceback
 
-from controller.control import Controller
+from controller.control import AssetInstanceController
 
 # Configs can be set in Configuration class directly or using helper utility
 config.load_kube_config()
-v1 = client.CustomObjectsApi()
-controller = Controller(
-    v1.list_namespaced_custom_object,
-    group="hv.com",
-    version="v1",
-    namespace="default",
-    plural="assets"
-)
+controller = AssetInstanceController()
 
 
 def main():
